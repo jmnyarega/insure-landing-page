@@ -1,30 +1,322 @@
 /*
- * - font types
- * - font sizes ...
- *
- */
-/*
- * variable colors
- *
- */
-/*
  * Global styles
  *
  */
 body {
-  background-color: lightblue;
+  background-color: initial;
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+  text-align: center;
 }
 
-/*
- * Custom reset files
- *
- */
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core root defaults */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Blur images when they have no alt attribute */
+img:not([alt]) {
+  filter: blur(10px);
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.container {
+  max-width: 50rem;
+  margin-inline: 1rem;
+}
+@media (min-width: 45rem) {
+  .container {
+    margin-inline: 10.3125rem;
+  }
+}
+
 .button {
-  color: black;
+  color: initial;
 }
 
-/*
- *
- * Home for sass
- *
- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  min-height: 5rem;
+  align-items: center;
+  position: relative;
+}
+.header input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.header .nav {
+  opacity: 0;
+  z-index: -1;
+  height: 0;
+  transition: all 350ms linear;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 5rem;
+  bottom: 0%;
+  padding-top: 3rem;
+  min-height: 100vh;
+  background-image: url(../../images/bg-pattern-mobile-nav.svg);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-color: #2b272f;
+  background-size: 100% auto;
+  box-shadow: 0 20px 10px 5px #2b272f;
+}
+.header .nav__items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 3rem;
+  color: white;
+  font-weight: bold;
+  font-size: 1.25rem;
+  list-style: none;
+  text-transform: uppercase;
+}
+.header .nav__link {
+  text-decoration: none;
+  color: inherit;
+  font: inherit;
+}
+
+#toggle:checked ~ .nav {
+  opacity: 1;
+  z-index: 1;
+  height: auto;
+}
+
+.hamburger {
+  border: 2px solid;
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  transition: all 350ms linear;
+}
+.hamburger span + span {
+  margin-top: 0.21875rem;
+}
+.hamburger span {
+  display: block;
+  width: 1rem;
+  height: 1.5px;
+  background-color: currentColor;
+  transition: all 350ms linear;
+}
+
+#toggle:checked + .hamburger > .top {
+  transform: translateY(0.3rem) rotateZ(45deg);
+}
+
+#toggle:checked + .hamburger > .middle {
+  width: 0;
+}
+
+#toggle:checked + .hamburger > .bottom {
+  transform: translateY(-0.3rem) rotateZ(-45deg);
+}
+
+#toggle:focus + .hamburger, #toggle:hover + .hamburger {
+  outline: 2px solid;
+  outline-offset: -6px;
+}
+
+.hero__img {
+  width: 100%;
+  object-fit: cover;
+}
+.hero__intro {
+  padding-top: 6.25rem;
+  padding-bottom: 5.6875rem;
+  overflow: visible;
+  background-image: url(../../images/bg-pattern-intro-left-mobile.svg), url(../../images/bg-pattern-intro-right-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: top left, bottom -100% right;
+  background-color: #2b272f;
+  color: white;
+}
+.hero__button {
+  display: block;
+  margin-top: 2.5rem;
+}
+.hero__text {
+  margin-top: 1rem;
+}
+.hero__title {
+  font-family: "DM Serif Display", serif;
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.specials {
+  padding-block: 8.75rem;
+}
+.specials__process {
+  margin-top: 3.5rem;
+}
+.specials__process img {
+  width: max-content;
+  margin-inline: auto;
+  margin-bottom: 2.5rem;
+}
+.specials__text {
+  color: #837d87;
+  max-width: 34.5ch;
+  margin-inline: auto;
+}
+.specials__title {
+  font-family: "DM Serif Display", serif;
+  font-weight: normal;
+  color: #2b272f;
+}
+.specials__title.-large {
+  font-size: 3rem;
+  margin-bottom: 5rem;
+  position: relative;
+}
+.specials__title.-large::before {
+  content: "";
+  height: 1px;
+  width: 50%;
+  background-color: #95a9c6;
+  position: absolute;
+  top: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.specials__title.-small {
+  font-size: 1.75rem;
+  margin-bottom: 1.375rem;
+}
+
+.how {
+  background-color: #2b272f;
+  color: white;
+  padding-block: 4.5rem;
+}
+.how__cta {
+  margin-top: 2.5rem;
+  display: block;
+}
+.how__title {
+  font-family: "DM Serif Display", serif;
+  font-size: 2.5rem;
+}
+
+.footer {
+  margin-top: 8.75rem;
+  background-image: url(../../images/bg-pattern-footer-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: top left, bottom -100% right;
+  background-color: #2b272f;
+  background-color: #fafafa;
+  padding-top: 5.25rem;
+}
+.footer__social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.9375rem;
+  margin-bottom: 2.5rem;
+}
+.footer__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2rem;
+}
+.footer__links {
+  margin-top: 2.375rem;
+}
+.footer__items {
+  list-style: none;
+}
+.footer__items + .footer__items {
+  margin-top: 2.375rem;
+}
+.footer__item + .footer__item {
+  margin-top: 1rem;
+}
+.footer__link {
+  text-decoration: none;
+  color: #2d2640;
+  font-size: 0.8125rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.footer__link.-header {
+  color: #837d87;
+  margin-bottom: 2.375rem;
+  display: block;
+}

@@ -1,0 +1,47 @@
+@use 'abstract';
+
+.specials {
+    padding-block: 8.75rem;
+    &__process {
+        margin-top: 3.5rem;
+        img {
+            width: max-content;
+            margin-inline: auto;
+            margin-bottom: 2.5rem;
+        }
+    }
+
+    &__text {
+        color: abstract.$dark-Grayish-violet;
+        max-width: 34.5ch;
+        margin-inline: auto;
+    }
+
+    &__title {
+        font-family: abstract.$font-alt;
+        font-weight: normal;
+        color: abstract.$very-dark-violet;
+
+        &.-large {
+            font-size: 3rem;
+            margin-bottom: 5rem;
+            position: relative;
+
+            &::before {
+                content: "";
+                height: 1px;
+                width: 50%;
+                background-color: abstract.$grayish-blue;
+                position: absolute;
+                top: -2.5rem;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        &.-small {
+            font-size: 1.75rem;
+            margin-bottom: 1.375rem;
+        }
+    }
+}

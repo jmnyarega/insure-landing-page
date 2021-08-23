@@ -1,0 +1,66 @@
+@use 'abstract';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    min-height: 5rem;
+    align-items: center;
+
+    position: relative;
+
+    input {
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+    }
+
+    .nav {
+        opacity: 0;
+        z-index: -1;
+        height: 0;
+        transition: all 350ms linear;
+
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 5rem;
+        bottom: 0%;
+
+        padding-top: 3rem;
+        min-height: 100vh;
+
+        background-image: url(../../images/bg-pattern-mobile-nav.svg);
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        background-color: abstract.$very-dark-violet;
+        background-size: 100% auto;
+
+        box-shadow: 0 20px 10px 5px abstract.$very-dark-violet;
+
+        &__items {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 3rem;
+
+            color: abstract.$white;
+            font-weight: bold;
+            font-size: 1.25rem;
+
+            list-style: none;
+            text-transform: uppercase;
+        }
+
+        &__link {
+            text-decoration: none;
+            color: inherit;
+            font: inherit;
+        }
+    }
+}
+
+#toggle:checked ~ .nav {
+    opacity: 1;
+    z-index: 1;
+    height: auto;
+}

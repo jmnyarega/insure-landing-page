@@ -1,0 +1,58 @@
+@use 'abstract';
+
+.footer {
+    margin-top: 8.75rem;
+    background-image: url(../../images/bg-pattern-footer-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: top left, bottom -100% right;
+    background-color: abstract.$very-dark-violet;
+    background-color: abstract.$very-Light-gray;
+    padding-top: 5.25rem;
+
+    &__social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 0.9375rem;
+
+        margin-bottom: 2.5rem;
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        row-gap: 2rem;
+    }
+
+    &__links {
+        margin-top: 2.375rem;
+    }
+
+    &__items {
+        list-style: none;
+    }
+
+    &__items + &__items {
+        margin-top: 2.375rem;
+    }
+
+    &__item + &__item {
+        margin-top: 1rem;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: abstract.$dark-Violet;
+        font-size: 0.8125rem;
+        font-weight: bold;
+        text-transform: uppercase;
+
+        &.-header {
+            color: abstract.$dark-Grayish-violet;
+            margin-bottom: 2.375rem;
+            display: block;
+        }
+    }
+}

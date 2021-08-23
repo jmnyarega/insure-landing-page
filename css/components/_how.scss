@@ -1,0 +1,18 @@
+@use 'abstract';
+
+.how {
+    background-color: abstract.$very-dark-violet;
+    color: abstract.$white;
+
+    padding-block: 4.5rem;
+
+    &__cta {
+        margin-top: 2.5rem;
+        display: block;
+    }
+
+    &__title {
+        font-family: abstract.$font-alt;
+        font-size: 2.5rem;
+    }
+}

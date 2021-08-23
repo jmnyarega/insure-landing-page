@@ -1,9 +1,10 @@
-/*
- *
- * Home for sass
- *
- */
-
-@use 'global';
-@use 'reset';
+@use 'shared/global';
+@use 'shared/reset';
+@use 'shared/layout';
 @use 'components/button';
+@use 'components/header';
+@use 'components/hamburger';
+@use 'components/hero';
+@use 'components/specials';
+@use 'components/how';
+@use 'components/footer';

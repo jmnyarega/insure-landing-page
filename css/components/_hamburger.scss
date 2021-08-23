@@ -1,0 +1,42 @@
+.hamburger {
+    border: 2px solid;
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-content: center;
+
+    cursor: pointer;
+    transition: all 350ms linear;
+
+    span + span {
+        margin-top: 0.21875rem;
+    }
+
+    span {
+        display: block;
+        width: 1rem;
+        height: 1.5px;
+        background-color: currentColor;
+        transition: all 350ms linear;
+    }
+}
+
+#toggle:checked + .hamburger > .top {
+    transform: translateY(0.3rem) rotateZ(45deg);
+}
+
+#toggle:checked + .hamburger > .middle {
+    width: 0;
+}
+
+#toggle:checked + .hamburger > .bottom {
+    transform: translateY(-0.3rem) rotateZ(-45deg);
+}
+
+#toggle {
+    &:focus + .hamburger,
+    &:hover + .hamburger {
+        outline: 2px solid;
+        outline-offset: -6px;
+    }
+}

@@ -1,0 +1,37 @@
+@use 'abstract';
+
+.hero {
+    &__img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__intro {
+        padding-top: 6.25rem;
+        padding-bottom: 5.6875rem;
+        overflow: visible;
+
+        background-image: url(../../images/bg-pattern-intro-left-mobile.svg),
+                          url(../../images/bg-pattern-intro-right-mobile.svg);
+        background-repeat: no-repeat;
+        background-position: top left, bottom -100% right;
+        background-color: abstract.$very-dark-violet;
+
+        color: abstract.$white;
+    }
+
+    &__button {
+        display: block;
+        margin-top: 2.5rem;
+    }
+
+    &__text {
+        margin-top: 1rem;
+    }
+
+    &__title {
+        font-family: abstract.$font-alt;
+        font-size: 3rem;
+        line-height: 1;
+    }
+}

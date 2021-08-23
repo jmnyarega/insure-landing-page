@@ -1,0 +1,8 @@
+.container {
+	max-width: 50rem;
+	margin-inline: 1rem;
+
+	@media (min-width: 45rem) {
+		margin-inline: 10.3125rem;
+	}
+}
