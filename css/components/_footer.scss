@@ -5,7 +5,6 @@
     background-image: url(../../images/bg-pattern-footer-mobile.svg);
     background-repeat: no-repeat;
     background-position: top left, bottom -100% right;
-    background-color: abstract.$very-dark-violet;
     background-color: abstract.$very-Light-gray;
     padding-top: 5.25rem;
 
@@ -14,8 +13,16 @@
         justify-content: center;
         align-items: center;
         column-gap: 0.9375rem;
-
         margin-bottom: 2.5rem;
+
+        a {
+            outline: none;
+
+            &:focus, &:hover {
+                outline: 1px solid abstract.$very-dark-violet;
+                outline-offset: 4px;
+            }
+        }
     }
 
     &__header {

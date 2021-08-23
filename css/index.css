@@ -286,7 +286,6 @@ img:not([alt]) {
   background-image: url(../../images/bg-pattern-footer-mobile.svg);
   background-repeat: no-repeat;
   background-position: top left, bottom -100% right;
-  background-color: #2b272f;
   background-color: #fafafa;
   padding-top: 5.25rem;
 }
@@ -296,6 +295,13 @@ img:not([alt]) {
   align-items: center;
   column-gap: 0.9375rem;
   margin-bottom: 2.5rem;
+}
+.footer__social a {
+  outline: none;
+}
+.footer__social a:focus, .footer__social a:hover {
+  outline: 1px solid #2b272f;
+  outline-offset: 4px;
 }
 .footer__header {
   display: flex;
@@ -329,11 +335,12 @@ img:not([alt]) {
   text-decoration: none;
   font-weight: bold;
   text-transform: uppercase;
+  outline: none;
   position: relative;
 }
 .h-link::after {
   content: "";
-  height: 1.5px;
+  height: 2px;
   background-color: currentColor;
   position: absolute;
   bottom: 0;
@@ -341,7 +348,7 @@ img:not([alt]) {
   right: 100%;
   transition: all 350ms linear;
 }
-.h-link:hover:not(.-header)::after {
+.h-link:hover:not(.-header)::after, .h-link:focus:not(.-header)::after {
   left: 0;
   right: 0;
 }
