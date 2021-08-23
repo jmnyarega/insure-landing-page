@@ -98,7 +98,17 @@ img:not([alt]) {
 }
 
 .button {
-  color: initial;
+  color: white;
+  border: 1.5px solid;
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0.8125em 1.25635rem;
+  transition: all 350ms linear;
+}
+.button:hover, .button:focus {
+  outline: 1.5px solid;
+  outline-offset: -5px;
 }
 
 .header {
@@ -130,7 +140,6 @@ img:not([alt]) {
   background-position: bottom center;
   background-color: #2b272f;
   background-size: 100% auto;
-  box-shadow: 0 20px 10px 5px #2b272f;
 }
 .header .nav__items {
   display: flex;
@@ -207,7 +216,6 @@ img:not([alt]) {
   color: white;
 }
 .hero__button {
-  display: block;
   margin-top: 2.5rem;
 }
 .hero__text {
@@ -267,7 +275,6 @@ img:not([alt]) {
 }
 .how__cta {
   margin-top: 2.5rem;
-  display: block;
 }
 .how__title {
   font-family: "DM Serif Display", serif;

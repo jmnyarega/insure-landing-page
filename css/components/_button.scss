@@ -1,5 +1,18 @@
 @use 'abstract';
 
 .button {
-    color: initial;
+    color: abstract.$white;
+    border: 1.5px solid;
+    display: inline-block;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0.8125em 1.25635rem;
+
+    transition: all 350ms linear;
+
+    &:hover, &:focus {
+        outline: 1.5px solid;
+        outline-offset: -5px;
+    }
 }
