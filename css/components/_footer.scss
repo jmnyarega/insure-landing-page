@@ -43,11 +43,8 @@
     }
 
     &__link {
-        text-decoration: none;
         color: abstract.$dark-Violet;
         font-size: 0.8125rem;
-        font-weight: bold;
-        text-transform: uppercase;
 
         &.-header {
             color: abstract.$dark-Grayish-violet;
