@@ -4,7 +4,7 @@
     margin-top: 8.75rem;
     background-image: url(../../images/bg-pattern-footer-mobile.svg);
     background-repeat: no-repeat;
-    background-color: abstract.$very-Light-gray;
+    background-color: abstract.$very-light-gray;
     padding-top: 5.25rem;
     background-position: top center;
 
@@ -19,18 +19,18 @@
         align-items: center;
         column-gap: 0.9375rem;
         margin-bottom: 2.5rem;
-        outline: 1px solid transparent;
-        transition: all 350ms linear;
+
         @media (min-width: 60rem) {
             margin: unset;
         }
 
         a {
-            outline: none;
+            outline: 2px solid transparent;
+            transition: all 200ms linear;
 
             &:focus, &:hover {
-                outline: 1px solid abstract.$very-dark-violet;
-                outline-offset: 4px;
+                outline: 2px solid abstract.$dark-grayish-violet;
+                outline-offset: 3px;
             }
         }
     }
@@ -73,13 +73,13 @@
     }
 
     &__link {
-        color: abstract.$dark-Violet;
+        color: abstract.$dark-violet;
         font-size: 0.8125rem;
     }
 
     &__item {
         &.-header {
-            color: abstract.$dark-Grayish-violet;
+            color: abstract.$dark-grayish-violet;
             margin-bottom: 2.375rem;
             display: block;
         }

@@ -107,7 +107,7 @@ img:not([alt]) {
   text-decoration: none;
   text-transform: uppercase;
   padding: 0.8125em 1.25635rem;
-  transition: all 350ms linear;
+  transition: all 200ms linear;
 }
 .button:hover, .button:focus {
   outline: 1.5px solid;
@@ -232,14 +232,29 @@ img:not([alt]) {
 
 .hero {
   background-color: #2b272f;
+  position: relative;
 }
 @media (min-width: 60rem) {
-  .hero {
-    overflow: visible;
-    background-image: url(../../images/bg-pattern-intro-left-mobile.svg), url(../../images/bg-pattern-intro-right-mobile.svg);
+  .hero::before, .hero::after {
+    content: "";
+    position: absolute;
     background-repeat: no-repeat;
-    background-position: top left, bottom -100% right;
-    color: white;
+    background-size: contain;
+    z-index: 2;
+  }
+  .hero::before {
+    background-image: url(../../images/bg-pattern-intro-left-desktop.svg);
+    width: 31.5rem;
+    height: 100%;
+    left: 0;
+    bottom: -50%;
+  }
+  .hero::after {
+    background-image: url(../../images/bg-pattern-intro-right-desktop.svg);
+    width: 20.25rem;
+    height: 100%;
+    right: 0;
+    top: 0;
   }
 }
 @media (min-width: 60rem) {
@@ -255,6 +270,7 @@ img:not([alt]) {
 @media (min-width: 60rem) {
   .hero__img {
     width: unset;
+    position: relative;
     align-self: flex-start;
     transform: translateY(20%);
   }
@@ -267,6 +283,8 @@ img:not([alt]) {
   background-repeat: no-repeat;
   background-position: top left, bottom -100% right;
   color: white;
+  position: relative;
+  z-index: 2;
 }
 @media (min-width: 60rem) {
   .hero__intro {
@@ -284,6 +302,16 @@ img:not([alt]) {
   font-family: "DM Serif Display", serif;
   font-size: 3rem;
   line-height: 1;
+}
+@media (min-width: 60rem) {
+  .hero__title::before {
+    content: "";
+    display: block;
+    background-color: red;
+    height: 2px;
+    width: 5rem;
+    margin-bottom: 1rem;
+  }
 }
 
 .specials {
@@ -363,6 +391,7 @@ img:not([alt]) {
 .how__title {
   font-family: "DM Serif Display", serif;
   font-size: 2.5rem;
+  line-height: 1;
 }
 @media (min-width: 60rem) {
   .how__title {
@@ -371,7 +400,7 @@ img:not([alt]) {
   }
 }
 .how .container {
-  padding-block: 4.5rem;
+  padding-block: 4.3rem;
 }
 @media (min-width: 60rem) {
   .how .container {
@@ -401,8 +430,6 @@ img:not([alt]) {
   align-items: center;
   column-gap: 0.9375rem;
   margin-bottom: 2.5rem;
-  outline: 1px solid transparent;
-  transition: all 350ms linear;
 }
 @media (min-width: 60rem) {
   .footer__social {
@@ -410,11 +437,12 @@ img:not([alt]) {
   }
 }
 .footer__social a {
-  outline: none;
+  outline: 2px solid transparent;
+  transition: all 200ms linear;
 }
 .footer__social a:focus, .footer__social a:hover {
-  outline: 1px solid #2b272f;
-  outline-offset: 4px;
+  outline: 2px solid #837d87;
+  outline-offset: 3px;
 }
 .footer__header {
   display: flex;
