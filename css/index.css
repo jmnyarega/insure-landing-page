@@ -92,7 +92,7 @@ img:not([alt]) {
   max-width: 90rem;
   padding-inline: 1rem;
 }
-@media (min-width: 45rem) {
+@media (min-width: 60rem) {
   .container {
     width: 80%;
     margin-inline: auto;
@@ -138,10 +138,19 @@ img:not([alt]) {
   bottom: 0%;
   padding-top: 3rem;
   min-height: 100vh;
+  background-color: #2b272f;
+}
+.header .nav::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  min-height: 16.625rem;
+  width: 100%;
   background-image: url(../../images/bg-pattern-mobile-nav.svg);
   background-repeat: no-repeat;
   background-position: bottom center;
-  background-color: #2b272f;
   background-size: 100% auto;
 }
 .header .nav__items {
@@ -184,7 +193,7 @@ img:not([alt]) {
 
 #toggle:checked ~ .nav {
   opacity: 1;
-  z-index: 1;
+  z-index: 3;
   height: auto;
 }
 
@@ -239,7 +248,6 @@ img:not([alt]) {
     content: "";
     position: absolute;
     background-repeat: no-repeat;
-    background-size: contain;
     z-index: 2;
   }
   .hero::before {
@@ -247,11 +255,11 @@ img:not([alt]) {
     width: 31.5rem;
     height: 100%;
     left: 0;
-    bottom: -50%;
+    bottom: -75%;
   }
   .hero::after {
     background-image: url(../../images/bg-pattern-intro-right-desktop.svg);
-    width: 20.25rem;
+    width: 27.25rem;
     height: 100%;
     right: 0;
     top: 0;
@@ -261,6 +269,8 @@ img:not([alt]) {
   .hero__container {
     display: flex;
     flex-direction: row-reverse;
+    width: 80%;
+    margin-inline: auto;
   }
 }
 .hero__img {
@@ -269,27 +279,43 @@ img:not([alt]) {
 }
 @media (min-width: 60rem) {
   .hero__img {
-    width: unset;
+    width: 50%;
     position: relative;
     align-self: flex-start;
-    transform: translateY(20%);
+    transform: translateY(6.625rem);
   }
 }
 .hero__intro {
   padding-top: 6.25rem;
   padding-bottom: 5.6875rem;
-  overflow: visible;
-  background-image: url(../../images/bg-pattern-intro-left-mobile.svg), url(../../images/bg-pattern-intro-right-mobile.svg);
-  background-repeat: no-repeat;
-  background-position: top left, bottom -100% right;
   color: white;
   position: relative;
   z-index: 2;
 }
+.hero__intro::before, .hero__intro::after {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  z-index: 2;
+}
 @media (min-width: 60rem) {
-  .hero__intro {
-    background: unset;
+  .hero__intro::before, .hero__intro::after {
+    content: initial;
   }
+}
+.hero__intro::before {
+  background-image: url(../../images/bg-pattern-intro-left-mobile.svg);
+  width: 10.5rem;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.hero__intro::after {
+  background-image: url(../../images/bg-pattern-intro-right-mobile.svg);
+  width: 7.5rem;
+  height: 70%;
+  right: 0;
+  top: 70%;
 }
 .hero__button {
   margin-top: 2.5rem;
@@ -297,6 +323,12 @@ img:not([alt]) {
 .hero__text {
   margin-top: 1rem;
   max-width: 55ch;
+  margin-inline: auto;
+}
+@media (min-width: 60rem) {
+  .hero__text {
+    margin-inline: initial;
+  }
 }
 .hero__title {
   font-family: "DM Serif Display", serif;
@@ -307,15 +339,20 @@ img:not([alt]) {
   .hero__title::before {
     content: "";
     display: block;
-    background-color: red;
-    height: 2px;
-    width: 5rem;
+    background-color: #837d87;
+    height: 1px;
+    width: 9.375rem;
     margin-bottom: 1rem;
   }
 }
 
 .specials {
   padding-block: 8.75rem;
+}
+@media (min-width: 60rem) {
+  .specials {
+    padding-block: 19.0625rem 10.375rem;
+  }
 }
 @media (min-width: 60rem) {
   .specials__items {
@@ -354,7 +391,7 @@ img:not([alt]) {
 .specials__title.-large::before {
   content: "";
   height: 1px;
-  width: 50%;
+  width: 9.375rem;
   background-color: #95a9c6;
   position: absolute;
   top: -2.5rem;
@@ -415,10 +452,10 @@ img:not([alt]) {
   background-image: url(../../images/bg-pattern-footer-mobile.svg);
   background-repeat: no-repeat;
   background-color: #fafafa;
-  padding-top: 5.25rem;
-  background-position: top center;
+  padding: 5.25rem 4rem;
+  background-position: top left;
 }
-@media (min-width: 60rem) {
+@media (min-width: 45rem) {
   .footer {
     background-image: url(../../images/bg-pattern-footer-desktop.svg);
     background-position: unset;
@@ -460,11 +497,17 @@ img:not([alt]) {
 }
 .footer__links {
   margin-top: 2.375rem;
+  display: grid;
+  grid-gap: 2.375rem;
+}
+@media (min-width: 45rem) {
+  .footer__links {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media (min-width: 60rem) {
   .footer__links {
-    display: flex;
-    justify-content: space-between;
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 .footer__items {
@@ -473,7 +516,7 @@ img:not([alt]) {
 .footer__items + .footer__items {
   margin-top: 2.375rem;
 }
-@media (min-width: 60rem) {
+@media (min-width: 45rem) {
   .footer__items + .footer__items {
     margin: unset;
   }

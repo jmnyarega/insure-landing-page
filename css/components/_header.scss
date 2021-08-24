@@ -28,12 +28,23 @@
 
         padding-top: 3rem;
         min-height: 100vh;
-
-        background-image: url(../../images/bg-pattern-mobile-nav.svg);
-        background-repeat: no-repeat;
-        background-position: bottom center;
         background-color: abstract.$very-dark-violet;
-        background-size: 100% auto;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            min-height: 16.625rem;
+            width: 100%;
+
+            background-image: url(../../images/bg-pattern-mobile-nav.svg);
+            background-repeat: no-repeat;
+            background-position: bottom center;
+            background-size: 100% auto;
+        }
 
         &__items {
             display: flex;
@@ -77,6 +88,6 @@
 
 #toggle:checked ~ .nav {
     opacity: 1;
-    z-index: 1;
+    z-index: 3;
     height: auto;
 }

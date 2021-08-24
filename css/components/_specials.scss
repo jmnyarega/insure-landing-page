@@ -2,6 +2,9 @@
 
 .specials {
     padding-block: 8.75rem;
+    @media (min-width: 60rem) {
+        padding-block: 19.0625rem 10.375rem;
+    }
 
     &__items {
         @media (min-width: 60rem) {
@@ -41,7 +44,7 @@
             &::before {
                 content: "";
                 height: 1px;
-                width: 50%;
+                width: 9.375rem;
                 background-color: abstract.$grayish-blue;
                 position: absolute;
                 top: -2.5rem;

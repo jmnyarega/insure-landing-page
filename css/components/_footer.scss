@@ -5,10 +5,10 @@
     background-image: url(../../images/bg-pattern-footer-mobile.svg);
     background-repeat: no-repeat;
     background-color: abstract.$very-light-gray;
-    padding-top: 5.25rem;
-    background-position: top center;
+    padding: 5.25rem 4rem;
+    background-position: top left;
 
-    @media (min-width: 60rem) {
+    @media (min-width: 45rem) {
         background-image: url(../../images/bg-pattern-footer-desktop.svg);
         background-position: unset;
     }
@@ -51,9 +51,15 @@
 
     &__links {
         margin-top: 2.375rem;
+        display: grid;
+        grid-gap: 2.375rem;
+
+        @media (min-width: 45rem) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
         @media (min-width: 60rem) {
-            display: flex;
-            justify-content: space-between;
+            grid-template-columns: repeat(4, 1fr);
         }
     }
 
@@ -63,7 +69,7 @@
 
     &__items + &__items {
         margin-top: 2.375rem;
-        @media (min-width: 60rem) {
+        @media (min-width: 45rem) {
             margin: unset;
         }
     }

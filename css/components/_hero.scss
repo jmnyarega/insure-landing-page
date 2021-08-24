@@ -1,4 +1,5 @@
 @use 'abstract';
+@use '../shared/_layout.scss';
 
 .hero {
     background-color: abstract.$very-dark-violet;
@@ -9,7 +10,6 @@
             content: "";
             position: absolute;
             background-repeat: no-repeat;
-            background-size: contain;
             z-index: 2;
         }
 
@@ -18,12 +18,12 @@
             width: 31.5rem;
             height: 100%;
             left: 0;
-            bottom: -50%;
+            bottom: -75%;
         }
 
         &::after {
             background-image: url(../../images/bg-pattern-intro-right-desktop.svg);
-            width: 20.25rem;
+            width: 27.25rem;
             height: 100%;
             right: 0;
             top: 0;
@@ -34,6 +34,8 @@
         @media (min-width: 60rem) {
             display: flex;
             flex-direction: row-reverse;
+            width: 80%;
+            margin-inline: auto;
         }
     }
 
@@ -41,29 +43,47 @@
         width: 100%;
         object-fit: cover;
         @media (min-width: 60rem) {
-            width: unset;
+            width: 50%;
             position: relative;
             align-self: flex-start;
 
-            transform: translateY(20%);
+            transform: translateY(6.625rem);
         }
     }
 
     &__intro {
         padding-top: 6.25rem;
         padding-bottom: 5.6875rem;
-        overflow: visible;
-        background-image: url(../../images/bg-pattern-intro-left-mobile.svg),
-        url(../../images/bg-pattern-intro-right-mobile.svg);
-        background-repeat: no-repeat;
-        background-position: top left, bottom -100% right;
         color: abstract.$white;
-
         position: relative;
         z-index: 2;
-        @media (min-width: 60rem) {
-            background: unset;
+
+        &::before, &::after {
+            content: "";
+            position: absolute;
+            background-repeat: no-repeat;
+            z-index: 2;
+            @media (min-width: 60rem) {
+                content: initial;
+            }
         }
+
+        &::before {
+            background-image: url(../../images/bg-pattern-intro-left-mobile.svg);
+            width: 10.5rem;
+            height: 100%;
+            left: 0;
+            top: 0;
+        }
+
+        &::after {
+            background-image: url(../../images/bg-pattern-intro-right-mobile.svg);
+            width: 7.5rem;
+            height: 70%;
+            right: 0;
+            top: 70%;
+        }
+
     }
 
     &__button {
@@ -73,6 +93,10 @@
     &__text {
         margin-top: 1rem;
         max-width: 55ch;
+        margin-inline: auto;
+        @media (min-width: 60rem) {
+            margin-inline: initial;
+        }
     }
 
     &__title {
@@ -84,9 +108,9 @@
             &::before {
                 content: "";
                 display: block;
-                background-color: red;
-                height: 2px;
-                width: 5rem;
+                background-color: abstract.$dark-grayish-violet;
+                height: 1px;
+                width: 9.375rem;
                 margin-bottom: 1rem;
             }
         }
