@@ -1,23 +1,46 @@
 @use 'abstract';
 
 .hero {
+    background-color: abstract.$very-dark-violet;
+    @media (min-width: 60rem) {
+        overflow: visible;
+        background-image: url(../../images/bg-pattern-intro-left-mobile.svg),
+        url(../../images/bg-pattern-intro-right-mobile.svg);
+        background-repeat: no-repeat;
+        background-position: top left, bottom -100% right;
+        color: abstract.$white;
+    }
+
+    &__container {
+        @media (min-width: 60rem) {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+    }
+
     &__img {
         width: 100%;
         object-fit: cover;
+        @media (min-width: 60rem) {
+            width: unset;
+            align-self: flex-start;
+
+            transform: translateY(20%);
+        }
     }
 
     &__intro {
         padding-top: 6.25rem;
         padding-bottom: 5.6875rem;
         overflow: visible;
-
         background-image: url(../../images/bg-pattern-intro-left-mobile.svg),
-                          url(../../images/bg-pattern-intro-right-mobile.svg);
+        url(../../images/bg-pattern-intro-right-mobile.svg);
         background-repeat: no-repeat;
         background-position: top left, bottom -100% right;
-        background-color: abstract.$very-dark-violet;
-
         color: abstract.$white;
+        @media (min-width: 60rem) {
+            background: unset;
+        }
     }
 
     &__button {
@@ -26,6 +49,7 @@
 
     &__text {
         margin-top: 1rem;
+        max-width: 55ch;
     }
 
     &__title {

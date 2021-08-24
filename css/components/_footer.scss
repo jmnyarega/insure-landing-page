@@ -4,9 +4,14 @@
     margin-top: 8.75rem;
     background-image: url(../../images/bg-pattern-footer-mobile.svg);
     background-repeat: no-repeat;
-    background-position: top left, bottom -100% right;
     background-color: abstract.$very-Light-gray;
     padding-top: 5.25rem;
+    background-position: top center;
+
+    @media (min-width: 60rem) {
+        background-image: url(../../images/bg-pattern-footer-desktop.svg);
+        background-position: unset;
+    }
 
     &__social {
         display: flex;
@@ -14,6 +19,11 @@
         align-items: center;
         column-gap: 0.9375rem;
         margin-bottom: 2.5rem;
+        outline: 1px solid transparent;
+        transition: all 350ms linear;
+        @media (min-width: 60rem) {
+            margin: unset;
+        }
 
         a {
             outline: none;
@@ -29,12 +39,22 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 2rem 0;
 
-        row-gap: 2rem;
+        @media (min-width: 60rem) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0;
+        }
     }
 
     &__links {
         margin-top: 2.375rem;
+        @media (min-width: 60rem) {
+            display: flex;
+            justify-content: space-between;
+        }
     }
 
     &__items {
@@ -43,6 +63,9 @@
 
     &__items + &__items {
         margin-top: 2.375rem;
+        @media (min-width: 60rem) {
+            margin: unset;
+        }
     }
 
     &__item + &__item {
@@ -52,7 +75,9 @@
     &__link {
         color: abstract.$dark-Violet;
         font-size: 0.8125rem;
+    }
 
+    &__item {
         &.-header {
             color: abstract.$dark-Grayish-violet;
             margin-bottom: 2.375rem;

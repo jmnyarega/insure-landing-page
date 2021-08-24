@@ -2,12 +2,23 @@
 
 .specials {
     padding-block: 8.75rem;
+
+    &__items {
+        @media (min-width: 60rem) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
     &__process {
         margin-top: 3.5rem;
         img {
             width: max-content;
             margin-inline: auto;
             margin-bottom: 2.5rem;
+            @media (min-width: 60rem) {
+                margin-inline: initial;
+            }
         }
     }
 
@@ -36,6 +47,11 @@
                 top: -2.5rem;
                 left: 50%;
                 transform: translateX(-50%);
+                @media (min-width: 60rem) {
+                    left: 0;
+                    transform: initial;
+                    width: 10%;
+                }
             }
         }
 

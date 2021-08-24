@@ -8,6 +8,10 @@
     cursor: pointer;
     transition: all 350ms linear;
 
+    @media (min-width: 45rem) {
+        display: none;
+    }
+
     span + span {
         margin-top: 0.21875rem;
     }

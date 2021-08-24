@@ -1,10 +1,15 @@
 @use 'abstract';
 
 .how {
+    background-image: url(../../images/bg-pattern-how-we-work-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: top right;
     background-color: abstract.$very-dark-violet;
     color: abstract.$white;
 
-    padding-block: 4.5rem;
+    @media (min-width: 60rem) {
+        background-image: url(../../images/bg-pattern-how-we-work-desktop.svg);
+    }
 
     &__cta {
         margin-top: 2.5rem;
@@ -13,5 +18,21 @@
     &__title {
         font-family: abstract.$font-alt;
         font-size: 2.5rem;
+        @media (min-width: 60rem) {
+            max-width: 18ch;
+            font-size: 3.5rem;
+        }
+    }
+
+    .container {
+        padding-block: 4.5rem;
+    }
+
+    @media (min-width: 60rem) {
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
     }
 }

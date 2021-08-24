@@ -13,12 +13,12 @@
     <title>Document</title>
   </head>
   <body>
-    <header class="header">
-      <div class="header__logo container">
+    <header class="header container">
+      <div class="header__logo">
         <img src="./images/logo.svg" alt="Insure logo" />
       </div>
       <input type="checkbox" id="toggle" />
-      <label class="hamburger container" for="toggle">
+      <label class="hamburger" for="toggle">
         <span class="top"></span>
         <span class="middle"></span>
         <span class="bottom"></span>
@@ -42,24 +42,27 @@
     </header>
     <main>
       <section class="hero">
-        <img
-          src="./images/image-intro-mobile.jpg"
-          class="hero__img"
-          alt=""
-          aria-hidden="true"
-        />
-        <div class="hero__intro">
-          <h1 class="hero__title container">Humanizing your insurance</h1>
-          <p class="hero__text container">
-            Get your life insurance coverage easier and faster. We blend our
-            expertise and technology to help you find the plan that’s right for
-            you. Ensure you and your loved ones are protected.
-          </p>
-          <a href="#0" class="hero__button button container">view plans</a>
+        <div class="hero__container container">
+          <img
+            src="./images/image-intro-mobile.jpg"
+            class="hero__img"
+            alt=""
+            aria-hidden="true"
+          />
+          <div class="hero__intro container">
+            <h1 class="hero__title">Humanizing your insurance</h1>
+            <p class="hero__text">
+              Get your life insurance coverage easier and faster. We blend our
+              expertise and technology to help you find the plan that’s right
+              for you. Ensure you and your loved ones are protected.
+            </p>
+            <a href="#0" class="hero__button button">view plans</a>
+          </div>
         </div>
       </section>
       <section class="specials container">
         <h2 class="specials__title -large">We're different</h2>
+
         <div class="specials__items">
           <div class="specials__process">
             <img
@@ -73,6 +76,7 @@
               Don’t get stuck filling in tedious forms.
             </p>
           </div>
+
           <div class="specials__process">
             <img
               src="./images/icon-affordable-prices.svg"
@@ -85,13 +89,14 @@
               may be low, but we still offer the best coverage possible.
             </p>
           </div>
+
           <div class="specials__process">
             <img
               src="./images/icon-people-first.svg"
               alt=""
               aria-hidden="true"
             />
-            <h3 class="specials__title">People First</h3>
+            <h3 class="specials__title -small">People First</h3>
             <p class="specials__text">
               Our plans aren’t full of conditions and clauses to prevent
               payouts. We make sure you’re covered when you need it.
@@ -100,8 +105,10 @@
         </div>
       </section>
       <section class="how container">
-        <h2 class="how__title container">Find out more about how we work</h2>
-        <a href="#0" class="how__cta button">how we work</a>
+        <div class="container">
+          <h2 class="how__title">Find out more about how we work</h2>
+          <a href="#0" class="how__cta button">how we work</a>
+        </div>
       </section>
     </main>
     <footer class="footer">
@@ -126,9 +133,7 @@
         <hr />
         <div class="footer__links">
           <ul class="footer__items">
-            <li class="footer__item">
-              <a href="#0" class="footer__link -header h-link">our company</a>
-            </li>
+            <li class="footer__item -header h-link">our company</li>
             <li class="footer__item">
               <a href="#0" class="footer__link h-link">how we work</a>
             </li>
@@ -143,9 +148,7 @@
             </li>
           </ul>
           <ul class="footer__items">
-            <li class="footer__item">
-              <a href="#0" class="footer__link -header h-link">help me</a>
-            </li>
+            <li class="footer__item -header h-link">help me</li>
             <li class="footer__item">
               <a href="#0" class="footer__link h-link">faq</a>
             </li>
@@ -160,9 +163,7 @@
             </li>
           </ul>
           <ul class="footer__items">
-            <li class="footer__item">
-              <a href="#0" class="footer__link -header h-link">contact</a>
-            </li>
+            <li class="footer__item -header h-link">contact</li>
             <li class="footer__item">
               <a href="#0" class="footer__link h-link">sales</a>
             </li>
@@ -174,9 +175,7 @@
             </li>
           </ul>
           <ul class="footer__items">
-            <li class="footer__item">
-              <a href="#0" class="footer__link -header h-link">others</a>
-            </li>
+            <li class="footer__item -header h-link">others</li>
             <li class="footer__item">
               <a href="#0" class="footer__link h-link">careers</a>
             </li>

@@ -1,14 +1,12 @@
-/*
- * Global styles
- *
- */
-
 @use 'abstract';
 
 body {
     background-color: initial;
-	font-family: abstract.$font-default;
-	font-size: 16px;
+    font-family: abstract.$font-default;
+    font-size: 16px;
+    text-align: center;
 
-	text-align: center;
+    @media (min-width: 60rem) {
+	text-align: initial;
+    }
 }
