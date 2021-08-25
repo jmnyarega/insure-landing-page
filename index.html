@@ -15,10 +15,12 @@
   <body>
     <header class="header container">
       <div class="header__logo">
-        <img src="./images/logo.svg" alt="Insure logo" />
+        <a href="">
+          <img src="./images/logo.svg" alt="Insure logo" />
+        </a>
       </div>
-      <input type="checkbox" id="toggle" />
-      <label class="hamburger" for="toggle">
+      <input type="checkbox" id="toggle" onchange="return toggle()" />
+      <label class="hamburger" for="toggle" aria-controls="menu">
         <span class="top"></span>
         <span class="middle"></span>
         <span class="bottom"></span>
@@ -54,7 +56,7 @@
             aria-hidden="true"
           />
           <div class="hero__intro container">
-            <h1 class="hero__title">Humanizing your insurance</h1>
+            <h1 class="hero__title">Humanizing your insurance.</h1>
             <p class="hero__text">
               Get your life insurance coverage easier and faster. We blend our
               expertise and technology to help you find the plan that’s right
@@ -118,7 +120,9 @@
     <footer class="footer">
       <div class="container">
         <div class="footer__header">
-          <img src="./images/logo.svg" alt="Insure logo" />
+          <a href="">
+            <img src="./images/logo.svg" alt="Insure logo" />
+          </a>
           <div class="footer__social">
             <a href="#0">
               <img src="./images/icon-facebook.svg" alt="Facebook" />
@@ -193,5 +197,17 @@
         </div>
       </div>
     </footer>
+    <script>
+      const checkbox = document.getElementById("toggle");
+      const label = document.querySelector("#toggle + label");
+
+      function toggle() {
+        if (checkbox.checked) {
+          label.setAttribute("aria-expanded", "true");
+        } else {
+          label.setAttribute("aria-expanded", "false");
+        }
+      }
+    </script>
   </body>
 </html>

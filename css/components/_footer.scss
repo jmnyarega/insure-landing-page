@@ -2,37 +2,16 @@
 
 .footer {
     margin-top: 8.75rem;
+    padding-block: 5.25rem 4rem;
+
     background-image: url(../../images/bg-pattern-footer-mobile.svg);
     background-repeat: no-repeat;
     background-color: abstract.$very-light-gray;
-    padding: 5.25rem 4rem;
     background-position: top left;
 
     @media (min-width: 45rem) {
         background-image: url(../../images/bg-pattern-footer-desktop.svg);
         background-position: unset;
-    }
-
-    &__social {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        column-gap: 0.9375rem;
-        margin-bottom: 2.5rem;
-
-        @media (min-width: 60rem) {
-            margin: unset;
-        }
-
-        a {
-            outline: 2px solid transparent;
-            transition: all 200ms linear;
-
-            &:focus, &:hover {
-                outline: 2px solid abstract.$dark-grayish-violet;
-                outline-offset: 3px;
-            }
-        }
     }
 
     &__header {
@@ -46,6 +25,38 @@
             justify-content: space-between;
             align-items: center;
             gap: 0;
+        }
+       & > a {
+            text-decoration: none;
+            outline: none;
+            &:focus, &:hover {
+                outline: 1px dotted abstract.$grayish-blue;
+                outline-offset: 2px;
+            }
+        }
+    }
+
+    hr { color: abstract.$very-light-gray; }
+
+    &__social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 0.9375rem;
+        margin-bottom: 2.5rem;
+
+        @media (min-width: 60rem) {
+            margin-bottom: 2.25rem;
+        }
+
+        a {
+            outline: 2px solid transparent;
+            transition: all 200ms linear;
+
+            &:focus, &:hover {
+                outline: 2px solid abstract.$dark-grayish-violet;
+                outline-offset: 3px;
+            }
         }
     }
 
@@ -63,9 +74,7 @@
         }
     }
 
-    &__items {
-        list-style: none;
-    }
+    &__items { list-style: none; }
 
     &__items + &__items {
         margin-top: 2.375rem;

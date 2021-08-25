@@ -14,6 +14,18 @@
         z-index: -1;
     }
 
+    &__logo {
+        &:focus-within, &:hover {
+            outline: 1px dotted abstract.$grayish-blue;
+            outline-offset: 2px;
+        }
+
+        a {
+            text-decoration: none;
+            outline: none;
+        }
+    }
+
     .nav {
         opacity: 0;
         z-index: -1;
@@ -30,20 +42,32 @@
         min-height: 100vh;
         background-color: abstract.$very-dark-violet;
 
+        @media (min-width: 45rem) {
+            opacity: 1;
+            z-index: 1;
+            height: auto;
+            position: initial;
+            background: initial;
+            min-height: initial;
+            padding-top: 0;
+        }
+
         &::after {
             content: "";
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-
-            min-height: 16.625rem;
-            width: 100%;
+            min-height: 0;
 
             background-image: url(../../images/bg-pattern-mobile-nav.svg);
             background-repeat: no-repeat;
             background-position: bottom center;
             background-size: 100% auto;
+
+            @media (min-width: 45rem) {
+                content: initial;
+            }
         }
 
         &__items {
@@ -72,16 +96,6 @@
         &__link {
             text-decoration: none;
             color: inherit;
-            font: inherit;
-        }
-        @media (min-width: 45rem) {
-            opacity: 1;
-            z-index: 1;
-            height: auto;
-            position: initial;
-            background: initial;
-            min-height: initial;
-            padding-top: 0;
         }
     }
 }
@@ -90,4 +104,8 @@
     opacity: 1;
     z-index: 3;
     height: auto;
+
+    &::after {
+        min-height: 18.625rem;
+    }
 }
